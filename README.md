@@ -1,6 +1,6 @@
-# MineControlRemote
+# StreamCraftRemote
 ## Introduction
-Remote service that connects the MineControl twitch extension to your minecrat server. This allows you to configure minecraft commands your viewers can trigger, that directly effect your server! The minecontrolremote service runs on the streamers computer and communicates between twitch and your minecraft server.
+Remote service that connects the StreamCraft twitch extension to your minecrat server. This allows you to configure minecraft commands your viewers can trigger, that directly effect your server! The streamcraftremote service runs on the streamers computer and communicates between twitch and your minecraft server.
 
 ## Requirements
 You need to have your own private (Java) Minecraft server, you can use a Hosted server, run a Docker container or run the server jar [(download here)]([https://www.minecraft.net/en-us/download/server]). This will not work with Bedrock (yet). Your server needs to have RCon Enabled, to do this you need both of these properties set in your server.properties file. (Yes you need to specify a password, not blank)
@@ -10,7 +10,7 @@ rcon.password=secret
 Alternatively, you can use the docker examples below which can set up a minecraft server for you.
 
 ### Version info
-You may try other versions, but here are the versions minecontrolremote.py has been tested with:
+You may try other versions, but here are the versions streamcraftremote.py has been tested with:
 * (Java) Minecraft server > 1.18.1
 * Python 3.9.6
 * pip 21.1.3 
@@ -19,35 +19,35 @@ You may try other versions, but here are the versions minecontrolremote.py has b
 * The Port 3210 needs to be open on the streamers computer
 
 ## Usage
-In order for MineControl to work you need to have the MineControl twitch live popout window open, and the minecontrolremote running on your streaming computer. You can open this window from your "Stream Manager", on the right side there are "Quick Actions" and MineControl should be visible (if you installed it under "Extensions -> My Extensions"). There are 3 different ways to run the minecontrolremote service: windows exe, python script, and Docker container.
+In order for StreamCraft to work you need to have the StreamCraft twitch live popout window open, and the streamcraftremote running on your streaming computer. You can open this window from your "Stream Manager", on the right side there are "Quick Actions" and StreamCraft should be visible (if you installed it under "Extensions -> My Extensions"). There are 3 different ways to run the streamcraftremote service: windows exe, python script, and Docker container.
 
 ### Windows
-Download the pre compiled version of minecontrolremote.exe under Release. And double click the minecontrolremote.exe. It will open a command terminal and also create a log of transactions and actions triggered by your viewers under minecontrolremote.log
+Download the pre compiled version of streamcraftremote.exe under Release. And double click the streamcraftremote.exe. It will open a command terminal and also create a log of transactions and actions triggered by your viewers under streamcraftremote.log
 
 ### Python (supports multiple OS)
 Download this GitHub repo as a zip file (see the green "code" button, and select "Download ZIP") \
 Next download python [(download here)]([https://www.python.org/downloads/]). You can then run pip to install the dependencies and run the script using the commands below:
 > pip install -r requirements.txt \
-python minecontrolremote.py
+python streamcraftremote.py
 
 ### Docker
 Download this GitHub repo as a zip file (see the green "code" button, and select "Download ZIP") \
 You will then need to download Docker or Docker Desktop [(download here)]([https://www.docker.com/products/docker-desktop])
-And from here you have 2 options you can individually run the docker containers for a minecraft server and minecontrolremote using the following commands:
-* Note: that rcon options are already specified for you, and you can change the RCON_PASSWORD. Just remember the password and port you pick because those are needed when setting up the MineControl extension on your Twitch extension dashboard. You can read more information on this minecraft server container here https://github.com/itzg/docker-minecraft-server
+And from here you have 2 options you can individually run the docker containers for a minecraft server and streamcraftremote using the following commands:
+* Note: that rcon options are already specified for you, and you can change the RCON_PASSWORD. Just remember the password and port you pick because those are needed when setting up the StreamCraft extension on your Twitch extension dashboard. You can read more information on this minecraft server container here https://github.com/itzg/docker-minecraft-server
 
 For the minecraft server:
 > docker run -d -p 25565:25565 -p 25575:25575 -e ENABLE_RCON=true -e RCON_PASSWORD=secret -e BROADCAST_RCON_TO_OPS=FALSE -e EULA=TRUE --name mc itzg/minecraft-server
 
-For the minecontrolremote service (these commands need to be executed in the folder where you downloaded minecontrolremote source from GitHub):
-> docker build -t minecontrolremote . \
-docker run -it -p 3210:3210 --name minecontrolremote minecontrolremote
+For the streamcraftremote service (these commands need to be executed in the folder where you downloaded streamcraftremote source from GitHub):
+> docker build -t streamcraftremote . \
+docker run -it -p 3210:3210 --name streamcraftremote streamcraftremote
 
-Another option is to run the docker-compose.yaml supplied which will start up both the minecraft server and minecontrolremote for you
+Another option is to run the docker-compose.yaml supplied which will start up both the minecraft server and streamcraftremote for you
 * Note: that rcon options are specified in the docker-compose.yaml
 > docker compose up
 
-(this command needs to be executed in the folder where you downloaded minecontrolremote source from GitHub)
+(this command needs to be executed in the folder where you downloaded streamcraftremote source from GitHub)
 
 ## Configure
 Navigate to your extensions in your twitch streamer dashboard and click configure (looks like a gear icon). From here you need to specify:
@@ -55,16 +55,16 @@ Navigate to your extensions in your twitch streamer dashboard and click configur
  if you are running the remote and server in a docker shown above this needs to be "172.17.0.1" or "host.docker.internal" or "docker.for.mac.host.internal") 
 * "port number" (this is 25575 unless you changed it) and password (secret unless you changed it)
 
-You can see next to remote status as the twitch extension periodically checks for the running minecontrolremote service.
-* "not connected, remote not running?" means you have not started minecontrolremote
+You can see next to remote status as the twitch extension periodically checks for the running streamcraftremote service.
+* "not connected, remote not running?" means you have not started streamcraftremote
 * "remote detected, but cannot connect to rcon, is the minecraft server running?" indicates that your minecraft server is not running is unreachable or your rcon configuration does not match what you have for your server
-* "connected, script executed" means the MineControl twitch config can now send commands to your server
+* "connected, script executed" means the StreamCraft twitch config can now send commands to your server
 
 You can now test this out by entering a valid minecraft slash command (without the slash) into the text area and click "Test Command" here are some examples:
-> say Hello MineControl! \
+> say Hello StreamCraft! \
 > execute at @p run summon zombie
 
-You can enter multiple commands on separate lines and minecontrolremote will execute each one in order!
+You can enter multiple commands on separate lines and streamcraftremote will execute each one in order!
 
 You can now click "Add an Action" and begin setting up viewer actions. "display" is the text placed on the action displayed to your viewer in thier extension panel and mobile phone. "bits cost" is the amount of bits you want to charge for this action (you are limited to the number of actions at a specific cost). "description" helps communicate to the viewer what the action does. "command" is the single or multiple minecraft commands you want to execute when the viewer chooses this action.
 

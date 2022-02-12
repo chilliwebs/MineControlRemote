@@ -6,8 +6,8 @@ RUN pip install -r /requirements.txt
 
 WORKDIR /app
 
-ADD minecontrolremote.py /app
+ADD streamcraftremote.py /app
 
 EXPOSE 3210
 
-ENTRYPOINT ["python", "/app/minecontrolremote.py"]
+ENTRYPOINT ["python", "/app/streamcraftremote.py"]

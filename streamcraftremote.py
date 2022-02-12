@@ -4,7 +4,7 @@ from mctools import RCONClient
 from flask import Flask, abort, request, Response
 
 app = Flask(__name__)
-logging.basicConfig(filename='minecontrolremote.log', level=logging.DEBUG, format=f'%(asctime)s %(message)s')
+logging.basicConfig(filename='streamcraftremote.log', level=logging.DEBUG, format=f'%(asctime)s %(message)s')
 logging.getLogger('werkzeug').setLevel(logging.WARNING)
 
 def escape_ansi(line):
