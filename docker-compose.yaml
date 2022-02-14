@@ -20,5 +20,5 @@ services:
     container_name: streamcraftremote
     build: .
     ports:
-    - "3210:3210"
+      - 3210:3210
     restart: unless-stopped
