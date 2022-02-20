@@ -3,7 +3,7 @@
 Remote service that connects the StreamCraft twitch extension to your minecrat server. This allows you to configure minecraft commands your viewers can trigger, that directly effect your server! The streamcraftremote service runs on the streamers computer and communicates between twitch and your minecraft server.
 
 ## Requirements
-You need to have your own private (Java) Minecraft server, you can use a Hosted server, run a Docker container or run the server jar [(download here)]([https://www.minecraft.net/en-us/download/server]). This will not work with Bedrock (yet). Your server needs to have RCon Enabled, to do this you need both of these properties set in your server.properties file. (Yes you need to specify a password, not blank)
+You need to have your own private (Java) Minecraft server, you can use a Hosted server, run a Docker container or run the server jar download here (https://www.minecraft.net/en-us/download/server). This will not work with Bedrock (yet). Your server needs to have RCon Enabled, to do this you need both of these properties set in your server.properties file. (Yes you need to specify a password, not blank)
 > rcon.port=25575 \
 rcon.password=secret
 
@@ -22,17 +22,17 @@ You may try other versions, but here are the versions streamcraftremote.py has b
 In order for StreamCraft to work you need to have the StreamCraft twitch live popout window open, and the streamcraftremote running on your streaming computer. You can open this window from your "Stream Manager", on the right side there are "Quick Actions" and StreamCraft should be visible (if you installed it under "Extensions -> My Extensions"). There are 3 different ways to run the streamcraftremote service: windows exe, python script, and Docker container.
 
 ### Windows
-Download the pre compiled version of streamcraftremote.exe under [Release]([https://github.com/chilliwebs/StreamCraftRemote/releases/tag/1.0.0]). And double click the streamcraftremote.exe. It will open a command terminal and also create a log of transactions and actions triggered by your viewers under streamcraftremote.log
+Download the pre compiled version of streamcraftremote.exe under Release (https://github.com/chilliwebs/StreamCraftRemote/releases/tag/1.0.0). And double click the streamcraftremote.exe. It will open a command terminal and also create a log of transactions and actions triggered by your viewers under streamcraftremote.log
 
 ### Python (supports multiple OS)
 Download this GitHub repo as a zip file (see the green "code" button, and select "Download ZIP") \
-Next download python [(download here)]([https://www.python.org/downloads/]). You can then run pip to install the dependencies and run the script using the commands below:
+Next download python download here (https://www.python.org/downloads/). You can then run pip to install the dependencies and run the script using the commands below:
 > pip install -r requirements.txt \
 python streamcraftremote.py
 
 ### Docker
 Download this GitHub repo as a zip file (see the green "code" button, and select "Download ZIP") \
-You will then need to download Docker or Docker Desktop [(download here)]([https://www.docker.com/products/docker-desktop])
+You will then need to download Docker or Docker Desktop download here (https://www.docker.com/products/docker-desktop)
 And from here you have 2 options you can individually run the docker containers for a minecraft server and streamcraftremote using the following commands:
 * Note: that rcon options are already specified for you, and you can change the RCON_PASSWORD. Just remember the password and port you pick because those are needed when setting up the StreamCraft extension on your Twitch extension dashboard. You can read more information on this minecraft server container here https://github.com/itzg/docker-minecraft-server
 
