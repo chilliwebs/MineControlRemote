@@ -22,7 +22,7 @@ You may try other versions, but here are the versions streamcraftremote.py has b
 In order for StreamCraft to work you need to have the StreamCraft twitch live popout window open, and the streamcraftremote running on your streaming computer. You can open this window from your "Stream Manager", on the right side there are "Quick Actions" and StreamCraft should be visible (if you installed it under "Extensions -> My Extensions"). There are 3 different ways to run the streamcraftremote service: windows exe, python script, and Docker container.
 
 ### Windows
-Download the pre compiled version of streamcraftremote.exe under Release. And double click the streamcraftremote.exe. It will open a command terminal and also create a log of transactions and actions triggered by your viewers under streamcraftremote.log
+Download the pre compiled version of streamcraftremote.exe under [Release]([https://github.com/chilliwebs/StreamCraftRemote/releases/tag/1.0.0]). And double click the streamcraftremote.exe. It will open a command terminal and also create a log of transactions and actions triggered by your viewers under streamcraftremote.log
 
 ### Python (supports multiple OS)
 Download this GitHub repo as a zip file (see the green "code" button, and select "Download ZIP") \
