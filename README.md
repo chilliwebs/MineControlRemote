@@ -66,7 +66,7 @@ You can now test this out by entering a valid minecraft slash command (without t
 
 You can enter multiple commands on separate lines and streamcraftremote will execute each one in order!
 
-You can now click "Add an Action" and begin setting up viewer actions. "display" is the text placed on the action displayed to your viewer in thier extension panel and mobile phone. "bits cost" is the amount of bits you want to charge for this action (you are limited to the number of actions at a specific cost). "description" helps communicate to the viewer what the action does. "command" is the single or multiple minecraft commands you want to execute when the viewer chooses this action.
+You can now click "Add an Action" and begin setting up viewer actions. "display" is the text placed on the action displayed to your viewer in thier extension panel and mobile phone. Next you need to assign "bits" to this action (you are limited to the number of actions at a specific bit). "description" helps communicate to the viewer what the action does. "command" is the single or multiple minecraft commands you want to execute when the viewer chooses this action.
 
 You can log into your private minecraft server and test these actions out easily by clicking the "Test" button
 

@@ -10,8 +10,11 @@ services:
     environment:
       SERVER_NAME: "Dockerized-Minecraft-Server"
       EULA: "TRUE"
+      MODE: "creative"
+      LEVEL_TYPE: "flat"
       ENABLE_RCON: "TRUE"
-      RCON_PASSWORD: secret
+      ONLINE_MODE: "FALSE"
+      RCON_PASSWORD: "secret"
       RCON_PORT: 25575
       SERVER_PORT: 25565
     restart: unless-stopped
