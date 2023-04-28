@@ -18,9 +18,6 @@ You may try other versions, but here are the versions streamcraftremote.py has b
 * mctools==1.1.2
 * The Port 3210 needs to be open on the streamers computer
 
-## Usage
-In order for StreamCraft to work you need to have the StreamCraft twitch live popout window open, and the streamcraftremote running on your streaming computer. You can open this window from your "Stream Manager", on the right side there are "Quick Actions" and StreamCraft should be visible (if you installed it under "Extensions -> My Extensions"). There are 3 different ways to run the streamcraftremote service: windows exe, python script, and Docker container.
-
 ### Windows
 Download the pre compiled version of streamcraftremote.exe under Release (https://github.com/chilliwebs/StreamCraftRemote/releases/tag/1.0.0). And double click the streamcraftremote.exe. It will open a command terminal and also create a log of transactions and actions triggered by your viewers under streamcraftremote.log
 
@@ -50,6 +47,8 @@ Another option is to run the docker-compose.yaml supplied which will start up bo
 (this command needs to be executed in the folder where you downloaded streamcraftremote source from GitHub)
 
 ## Configure
+![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/extension_config1.jpg?raw=true)
+
 Navigate to your extensions in your twitch streamer dashboard and click configure (looks like a gear icon). From here you need to specify:
 * "host/ip address" (in most cases should be "localhost" unless you use a minecraft server hosting service, \
  if you are running the remote and server in a docker shown above this needs to be "172.17.0.1" or "host.docker.internal" or "docker.for.mac.host.internal") 
@@ -71,6 +70,29 @@ You can now click "Add an Action" and begin setting up viewer actions. "display"
 You can log into your private minecraft server and test these actions out easily by clicking the "Test" button
 
 Don't forget to click "Save Configuration" often so you don't lose your customizations.
+
+## Usage
+In order for StreamCraft to work you need to have the StreamCraft twitch live popout window open, and the streamcraftremote running on your streaming computer. You can open this window from your "Stream Manager", on the right side there are "Quick Actions" and StreamCraft should be visible (if you installed it under "Extensions -> My Extensions"). There are 3 different ways to run the streamcraftremote service: windows exe, python script, and Docker container.
+
+**Remember to open your live panel from your stream manager!**
+
+![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/stream_manager.jpg?raw=true)
+
+**This window has to remain open inorder for it to send twitch commands to StreamCraftRemote!**
+
+![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/live_panel.jpg?raw=true)
+
+## Troubleshooting
+
+**If your viewers see this:**
+
+![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/viewer_panel_waiting.jpg?raw=true)
+
+**It means either you are not running the live panel mention above, or your server and remote are not running**
+
+![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/live_panel_noremote.jpg?raw=true)
+
+![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/live_panel_noserver.jpg?raw=true)
 
 # You are responsible for testing your commands
 If your commands fail you will need to remedy this with your viewers. It is not recommended to change the configuration or actions while you are streaming. This can lead to command mistakes and you are resposible for them.
