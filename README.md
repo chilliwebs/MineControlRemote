@@ -49,6 +49,8 @@ Another option is to run the docker-compose.yaml supplied which will start up bo
 ## Configure
 ![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/extension_config1.jpg?raw=true)
 
+**If you dont see the green "connected" check your minecraft server settings**
+
 Navigate to your extensions in your twitch streamer dashboard and click configure (looks like a gear icon). From here you need to specify:
 * "host/ip address" (in most cases should be "localhost" unless you use a minecraft server hosting service, \
  if you are running the remote and server in a docker shown above this needs to be "172.17.0.1" or "host.docker.internal" or "docker.for.mac.host.internal") 
@@ -76,23 +78,41 @@ In order for StreamCraft to work you need to have the StreamCraft twitch live po
 
 **Remember to open your live panel from your stream manager!**
 
-![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/stream_manager.jpg?raw=true)
+![stream_manager](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/stream_manager.jpg?raw=true)
 
 **This window has to remain open inorder for it to send twitch commands to StreamCraftRemote!**
 
-![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/live_panel.jpg?raw=true)
+![live_panel](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/live_panel.jpg?raw=true)
+
+**Run StreamCraftRemote.exe! and see logs for user actions**
+
+![streamcraft_remote_terminal](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/streamcraft_remote_terminal.jpg?raw=true)
+
+**clicking the sliker "temporarily disable actions for viewers", will block user actions and show "Please wait for streamer to start"**
 
 ## Troubleshooting
 
 **If your viewers see this:**
 
-![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/viewer_panel_waiting.jpg?raw=true)
+![viewer_panel_waiting](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/viewer_panel_waiting.jpg?raw=true)
 
 **It means either you are not running the live panel mention above, or your server and remote are not running**
 
-![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/live_panel_noremote.jpg?raw=true)
+![live_panel_noremote](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/live_panel_noremote.jpg?raw=true)
 
-![extension_config1](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/live_panel_noserver.jpg?raw=true)
+![live_panel_noserver](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/live_panel_noserver.jpg?raw=true)
+
+**in the config you see this, it means you are running the StreamCraftRemote.exe**
+
+![extension_config3](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/extension_config3.jpg?raw=true)
+
+**this error means your server is not running or, the rcon password, host/ip/port is incorrect**
+
+![extension_config4](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/extension_config4.jpg?raw=true)
+
+**If you see these errors repeated in the StreamCraftRemote.exe, it means StreamCraftRemote is unable to connect to your minecraft server, and its is not running or, the rcon password, host/ip/port is incorrect**
+
+![streamcraft_remote_terminal](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/streamcraft_remote_terminal_err.jpg?raw=true)
 
 # You are responsible for testing your commands
 If your commands fail you will need to remedy this with your viewers. It is not recommended to change the configuration or actions while you are streaming. This can lead to command mistakes and you are resposible for them.
