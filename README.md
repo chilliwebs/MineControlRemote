@@ -88,7 +88,7 @@ In order for StreamCraft to work you need to have the StreamCraft twitch live po
 
 ![streamcraft_remote_terminal](https://github.com/chilliwebs/StreamCraftRemote/blob/main/docs/streamcraft_remote_terminal.jpg?raw=true)
 
-**clicking the sliker "temporarily disable actions for viewers", will block user actions and show "Please wait for streamer to start"**
+**clicking the slider "temporarily disable actions for viewers", will block user actions and show "Please wait for streamer to start"**
 
 ## Troubleshooting
 
